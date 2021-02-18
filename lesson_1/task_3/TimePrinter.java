@@ -1,7 +1,7 @@
 public class TimePrinter {
     public static void main (String [] arg){
         int s = 4500;
-        int sec = 4500 % 60;
+        int sec = s % 60;
         int m = (s - sec) / 60;
         int min = m % 60;
         int h = (m - min) / 60;

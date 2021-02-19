@@ -6,7 +6,7 @@ public class DifferentNumbers {
         if (s.length() == 4) {
             for (int i = 0; i < s.length(); i++) {
                 for (int j = 0; j < s.length(); j++) {
-                    if (s.charAt(i) == s.charAt(j) && j != i){
+                    if (s.charAt(i) == s.charAt(j) && j != i) {
                         count++;
                     }
                 }

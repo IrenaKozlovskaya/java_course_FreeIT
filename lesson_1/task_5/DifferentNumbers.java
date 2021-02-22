@@ -16,8 +16,7 @@ public class DifferentNumbers {
             } else if (count == 0) {
                 System.out.print("True");
             }
-        }
-        else {
+        } else {
             System.out.print("Entered the wrong number");
         }
     }

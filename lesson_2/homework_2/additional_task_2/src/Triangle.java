@@ -9,19 +9,10 @@ public class Triangle {
         int a = (int) (Math.random() * 10);
         int b = (int) (Math.random() * 10);
         int c = (int) (Math.random() * 10);
-        if (a + b > c) {
-            if (a + c > b) {
-                if (c + b > a) {
-                    System.out.println(a + " " + b + " " + c + " Such a triangle exists");
-                } else {
-                    System.out.println("No such triangle exists");
-                }
-            } else {
-                System.out.println("No such triangle exists");
-            }
+        if (a + b > c && a + c > b && c + b > a) {
+            System.out.println(a + " " + b + " " + c + " Such a triangle exists");
         } else {
             System.out.println("No such triangle exists");
         }
-
     }
 }

@@ -4,14 +4,14 @@ public class ArrayofNumbers {
      * из них.
      */
     public static void main(String... arg) {
-        int keeper = 0;
+        int minNumber = -2147483648;
         for (int i = 0; i < 10; i++) {
-            int numbers = (int) (Math.random() * 100);
+            int numbers = (int) (Math.random() * 201) - 100;
             System.out.println(numbers);
-            if (numbers > keeper) {
-                keeper = numbers;
+            if (numbers > minNumber) {
+                minNumber = numbers;
             }
         }
-        System.out.println(keeper + " is MAX");
+        System.out.println(minNumber + " is MAX");
     }
 }

@@ -28,7 +28,7 @@ public class NoughtsAndCrosses {
         int verticalComputer = 0;
         int diagonalHuman = 0;
         int diagonalComputer = 0;
-        int count= 0;
+        int count = 0;
         int computer;
         int human;
         int i = 0;
@@ -38,7 +38,7 @@ public class NoughtsAndCrosses {
             System.out.println("Решим кто будет ходить первым! Выберите цифру от 0 до 9");
             human = Integer.parseInt(reader.readLine());
             System.out.println("Компьютер  -  " + computer);
-            if (human < 10 && human >= 0 ) {
+            if (human < 10 && human >= 0) {
                 if (human > computer) {
                     human = 10;
                     break;
@@ -63,14 +63,14 @@ public class NoughtsAndCrosses {
                         while (true) {
                             for (int w = 0; w < z.length(); w++) {
                                 if (count != z.length()) {
-                                    if ((si.charAt(0) == z.charAt(w)) && (sj.charAt(0)== e.charAt(w))) {
+                                    if ((si.charAt(0) == z.charAt(w)) && (sj.charAt(0) == e.charAt(w))) {
                                         i = random.nextInt(3);
                                         si = Integer.toString(i);
                                         j = random.nextInt(3);
                                         sj = Integer.toString(j);
                                         count = 0;
                                         break;
-                                    } else if ((si.charAt(0) != z.charAt(w)) || (sj.charAt(0)!= e.charAt(w))) {
+                                    } else if ((si.charAt(0) != z.charAt(w)) || (sj.charAt(0) != e.charAt(w))) {
                                         count++;
                                     }
                                 } else {
@@ -150,35 +150,34 @@ public class NoughtsAndCrosses {
                                 game[o][u] = stepComputer;
                             }
                         }
-                        if (game[o][0]== stepHuman && game[o][1]== stepHuman && game[o][2]== stepHuman || game[0][o]== stepHuman && game[1][o]== stepHuman && game[2][o]== stepHuman) {
-                                verticalHuman++;
-                            } else if (game[o][0]== stepComputer && game[o][1]== stepComputer && game[o][2]== stepComputer || game[0][o]== stepComputer && game[1][o]== stepComputer && game[2][o]== stepComputer) {
-                                verticalComputer++;
-                            }
-                            if (game[0][2]== stepHuman && game[2][0]== stepHuman && game[1][1]== stepHuman || game[2][2]== stepHuman && game[0][0]== stepHuman && game[1][1]== stepHuman) {
-                                diagonalHuman++;
-                            } else if (game[0][2]== stepComputer && game[2][0]== stepComputer && game[1][1]== stepComputer || game[2][2]== stepComputer&& game[0][0]== stepComputer && game[1][1]== stepComputer) {
-                                diagonalComputer++;
-                            }
-                         if (game[o][u]!= stepComputer && game[o][u]!= stepHuman) {
+                        if (game[o][0] == stepHuman && game[o][1] == stepHuman && game[o][2] == stepHuman || game[0][o] == stepHuman && game[1][o] == stepHuman && game[2][o] == stepHuman) {
+                            verticalHuman++;
+                        } else if (game[o][0] == stepComputer && game[o][1] == stepComputer && game[o][2] == stepComputer || game[0][o] == stepComputer && game[1][o] == stepComputer && game[2][o] == stepComputer) {
+                            verticalComputer++;
+                        }
+                        if (game[0][2] == stepHuman && game[2][0] == stepHuman && game[1][1] == stepHuman || game[2][2] == stepHuman && game[0][0] == stepHuman && game[1][1] == stepHuman) {
+                            diagonalHuman++;
+                        } else if (game[0][2] == stepComputer && game[2][0] == stepComputer && game[1][1] == stepComputer || game[2][2] == stepComputer && game[0][0] == stepComputer && game[1][1] == stepComputer) {
+                            diagonalComputer++;
+                        }
+                        if (game[o][u] != stepComputer && game[o][u] != stepHuman) {
                             game[o][u] = "|*|";
                         }
                         System.out.print(game[o][u]);
                     }
                     System.out.println();
                 }
-                if( diagonalComputer>0||verticalComputer >0){
+                if (diagonalComputer > 0 || verticalComputer > 0) {
                     System.out.println("Вы проиграли! Победил высший разум!");
                     break winner;
-                }
-                else if( diagonalHuman>0 || verticalHuman >0){
+                } else if (diagonalHuman > 0 || verticalHuman > 0) {
                     System.out.println("Вы выиграли! Поздравляю! ");
                     break winner;
                 }
                 count = 0;
             }
         }
-        if (diagonalComputer==0&&verticalComputer ==0 && diagonalHuman==0 && verticalHuman==0) {
+        if (diagonalComputer == 0 && verticalComputer == 0 && diagonalHuman == 0 && verticalHuman == 0) {
             System.out.println("Ничья! Победила дружба! ");
         }
     }

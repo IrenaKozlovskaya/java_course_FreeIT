@@ -1,0 +1,25 @@
+public class Buran implements IStart {
+
+    @Override
+    public boolean check() {
+        System.out.println("Начинается предстартовая проверка  Buran.");
+        int check = (int) (Math.random() * 10);
+        if (check > 4) {
+            System.out.println("Проверка пройдена!");
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void engineStarting() {
+        System.out.println("Двигатели Buran запущены. Все системы в норме.");
+
+    }
+
+    @Override
+    public void start() {
+        System.out.println("Старт Buran.");
+
+    }
+}

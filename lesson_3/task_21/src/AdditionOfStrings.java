@@ -1,5 +1,4 @@
 import java.lang.StringBuilder;
-import java.util.Date;
 
 public class AdditionOfStrings {
     /**
@@ -9,28 +8,26 @@ public class AdditionOfStrings {
      */
     public static void main(String[] args) {
         int n = 10000;
-        Date date = new Date();
-        long startTime = date.getTime();
+        long startTime = System.currentTimeMillis();
 
         String string = "";
         for (int i = 0; i < n; i++) {
             string += "addition";
         }
-        Date dateString = new Date();
-        System.out.println(dateString.getTime() - startTime);
+        System.out.println(System.currentTimeMillis() - startTime);
+        startTime = System.currentTimeMillis();
 
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < n; i++) {
             builder.append("addition");
         }
-        Date dateStringBuilder = new Date();
-        System.out.println(dateStringBuilder.getTime() - dateString.getTime());
+        System.out.println(System.currentTimeMillis() - startTime);
+        startTime = System.currentTimeMillis();
 
         StringBuffer stringBuff = new StringBuffer();
         for (int i = 0; i < n; i++) {
             stringBuff.append("addition");
         }
-        Date dateStringBuffer = new Date();
-        System.out.println(dateStringBuffer.getTime() - dateStringBuilder.getTime());
+        System.out.println(System.currentTimeMillis() - startTime);
     }
 }

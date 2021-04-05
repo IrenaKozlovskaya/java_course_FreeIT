@@ -19,7 +19,9 @@ public class SumArray {
                 indexMin = i;
             }
         }
-        for (int i = Math.min(indexMax, indexMin) + 1; i < Math.max(indexMax, indexMin); i++) {
+        min = Math.min(indexMax, indexMin);
+        max = Math.max(indexMax, indexMin);
+        for (int i = min + 1; i < max; i++) {
             sum += array[i];
         }
         System.out.println(sum);

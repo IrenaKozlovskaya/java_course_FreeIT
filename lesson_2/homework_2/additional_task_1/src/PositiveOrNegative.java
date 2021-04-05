@@ -6,22 +6,25 @@ public class PositiveOrNegative {
      */
     public static void main(String[] args) {
         int number = (int) (Math.random() * 1999) - 999;
-        if (number == 0) {
-            System.out.println("This number is 0");
-        } else if (number % 10 == number && number > 0) {
-            System.out.println(number + " This is a one-digit positive number");
-        } else if (number % 10 == number && number < 0) {
-            System.out.println(number + " This is a one-digit negative number");
-        } else if (number % 100 == number && number > 0) {
-            System.out.println(number + " This is a two-digit positive number");
-        } else if (number % 100 == number && number < 0) {
-            System.out.println(number + " This is a two-digit negative number");
-        } else if (number % 1000 == number && number > 0) {
-            System.out.println(number + " This is a three-digit positive number");
-        } else if (number % 1000 == number && number < 0) {
-            System.out.println(number + " This is a three-digit negative number");
+        switch (numberOfDigits(number)) {
+            case (1) -> System.out.print(number + " This is a one-digit ");
+            case (2) -> System.out.print(number + " This is a two-digit ");
+            case (3) -> System.out.print(number + " This is a three-digit ");
+        }
+        if (number > 0) {
+            System.out.print("positive number ");
+        } else if (number < 0) {
+            System.out.print("negative number ");
         }
 
+    }
 
+    public static int numberOfDigits(int number) {
+        int digit = 0;
+        while (number != 0) {
+            number = number / 10;
+            digit++;
+        }
+        return digit;
     }
 }

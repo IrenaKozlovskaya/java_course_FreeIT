@@ -6,11 +6,7 @@ public class DistanceTable {
     public static void main(String[] args) {
         double centimeters = 2.54;
         for (int j = 1; j < 21; j++) {
-            System.out.print(j + " ");
-        }
-        System.out.println(" ");
-        for (int i = 1; i < 21; i++) {
-            System.out.print(i * centimeters + " ");
+            System.out.println(j + "   " + j * centimeters);
         }
 
     }

@@ -4,7 +4,7 @@ public class ArrayofNumbers {
      * из них.
      */
     public static void main(String... arg) {
-        int minNumber = -2147483648;
+        int minNumber = Integer.MIN_VALUE;
         for (int i = 0; i < 10; i++) {
             int numbers = (int) (Math.random() * 201) - 100;
             System.out.println(numbers);

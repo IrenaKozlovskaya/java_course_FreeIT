@@ -6,11 +6,13 @@ public class Sportsman {
      */
     public static void main(String[] args) {
         double km = 10;
+        double sum = 0;
 
         for (int i = 0; i < 7; i++) {
             km += km / 100 * 10;
+            sum += km;
         }
-        System.out.printf("%.2f", km);
+        System.out.printf("%.2f", sum);
     }
 
 

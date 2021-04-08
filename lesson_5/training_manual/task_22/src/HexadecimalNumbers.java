@@ -8,8 +8,8 @@ public class HexadecimalNumbers {
      * страницу.
      */
     public static void main(String[] args) {
-        String text = "jhdfkj3-6dksn0Ckjo5A6jgxftg2bs21AF3";
-        Pattern pattern = Pattern.compile("[0-9a-fA-F]+");
+        String text = "jhdfkj3-0x6dksn0Ckjo0X5A6fgxftg2bs21AF3";
+        Pattern pattern = Pattern.compile("0(x|X)[0-9a-fA-F]+");
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {
             System.out.println(matcher.group(0));

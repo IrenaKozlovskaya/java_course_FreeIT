@@ -24,22 +24,18 @@ public class PassengerTransport extends LandTransport {
         this.passenger = passenger;
     }
 
-    public String description() {
-        String result = getModel() + ": мощность - " + getPower() + " л/с (" + powerInKB() + " кВт), максимальная скорость - " + getMaxSpeed() + " км/ч, масса - " + getWeight() + " кг, количество колес - " + getWheel() + ", расход топлива - " + getFuelConsumption() + " л/100км, тип кузова - " + getCarBodyType() + ", количество пассажиров - " + getPassenger();
-        return result;
+    @Override
+    public String toString() {
+        return super.toString() + ", тип кузова - " + getCarBodyType() + ", количество пассажиров - " + getPassenger();
     }
 
-    public int powerInKB() {
-        return (int) (getPower() * 0.74);
-    }
-
-    public void way(double time) {
+    public void distanceTraveled_withMaxSpeed(double time) {
         int way = (int) (time * getMaxSpeed());
-        double fuel = fuel(way);
+        double fuel = fuel_consumed(way);
         System.out.println("За время " + time + " часа, автомобиль " + getModel() + " двигаясь с максимальной скоростью " + getMaxSpeed() + " км/ч, проедет " + way + " км и израсходует " + fuel + " литров топлива");
     }
 
-    private double fuel(int way) {
+    private double fuel_consumed(int way) {
         return getFuelConsumption() * way / 100;
     }
 }

@@ -24,16 +24,12 @@ public class MilitaryTransport extends AirTransport {
         this.rocket = rocket;
     }
 
-    public String description() {
-        String result = getModel() + ": мощность - " + getPower() + " л/с (" + powerInKB() + " кВт), максимальная скорость - " + getMaxSpeed() + " км/ч, масса - " + getWeight() + " кг, размах крыльев - " + getWingspan() + " м, минимальная длина взлётно-посадочной полосы для взлёта - " + getMinRunwayLength() + " м, наличие системы катапультирования - " + isCatapult() + ", количество ракет на борту - " + getRocket();
-        return result;
+    @Override
+    public String toString() {
+        return super.toString() + ", наличие системы катапультирования - " + isCatapult() + ", количество ракет на борту - " + getRocket();
     }
 
-    public int powerInKB() {
-        return (int) (getPower() * 0.74);
-    }
-
-    public void shot(int rocket) {
+    public void rocket_launch(int rocket) {
         while (rocket >= 0) {
             if (rocket == 0) {
                 System.out.println("Боеприпасы отсутствуют");
@@ -43,7 +39,7 @@ public class MilitaryTransport extends AirTransport {
         }
     }
 
-    public void bailout() {
+    public void catapult_launch() {
         if (isCatapult()) {
             System.out.println("Катапультирование прошло успешно");
         } else

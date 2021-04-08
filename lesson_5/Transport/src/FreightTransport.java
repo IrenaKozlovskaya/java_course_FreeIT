@@ -14,18 +14,12 @@ public class FreightTransport extends LandTransport {
         this.liftingCapacity = liftingCapacity;
     }
 
-    public String description() {
-        String result = getModel() + ": мощность - " + getPower() + " л/с (" + powerInKB() + " кВт), максимальная скорость - " + getMaxSpeed() + " км/ч, масса - " + getWeight() + " кг, количество колес - " + getWheel() + ", расход топлива - " + getFuelConsumption() + " л/100км, грузоподъемность - " + getLiftingCapacity() + " т";
-        return result;
-
-
+    @Override
+    public String toString() {
+        return super.toString() + ", грузоподъемность - " + getLiftingCapacity() + " т";
     }
 
-    public int powerInKB() {
-        return (int) (getPower() * 0.74);
-    }
-
-    public void capacity(int cargo) {
+    public void truck_capacity(int cargo) {
         if (liftingCapacity >= cargo) {
             System.out.println("Грузовик загружен");
         } else

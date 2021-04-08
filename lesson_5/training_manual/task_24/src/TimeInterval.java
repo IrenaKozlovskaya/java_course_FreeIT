@@ -25,23 +25,27 @@ public class TimeInterval {
     public static void main(String[] args) {
         TimeInterval first_interval = new TimeInterval(3, 3, 28);
         TimeInterval second_interval = new TimeInterval(7, 3, 28);
-        first_interval.print(new TimeInterval(first_interval.totalNumberOfSeconds()), new TimeInterval(second_interval.totalNumberOfSeconds()));
+        first_interval.print(first_interval, second_interval);
     }
 
     public int totalNumberOfSeconds() {
         return total_sec = sec + (min + (hours * 60)) * 60;
     }
 
-    public int compare(TimeInterval first_interval, TimeInterval second_interval) {
-        return Integer.compare(first_interval.total_sec, second_interval.total_sec);
+    public int compare(int first_interval, int second_interval) {
+        return Integer.compare(first_interval, second_interval);
 
     }
 
     public void print(TimeInterval first_interval, TimeInterval second_interval) {
-        System.out.println("Первый промежуток времени " + first_interval.total_sec);
-        System.out.println("Второй промежуток времени " + second_interval.total_sec);
-        System.out.println("Вывод " + compare(first_interval, second_interval));
+        System.out.println("Первый промежуток времени " + first_interval.toString());
+        System.out.println("Второй промежуток времени " + second_interval.toString());
+        System.out.println("Вывод " + compare(first_interval.totalNumberOfSeconds(), second_interval.totalNumberOfSeconds()));
 
+    }
+
+    public String toString() {
+        return hours + " часов " + min + " минут " + sec + " секунд ";
     }
 
 

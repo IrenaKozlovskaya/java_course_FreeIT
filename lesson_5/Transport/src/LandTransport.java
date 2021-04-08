@@ -24,4 +24,8 @@ public abstract class LandTransport extends Transport {
         this.fuelConsumption = fuelConsumption;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + ", количество колес - " + getWheel() + ", расход топлива - " + getFuelConsumption() + " л/100км";
+    }
 }

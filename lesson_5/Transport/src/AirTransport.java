@@ -23,5 +23,10 @@ public abstract class AirTransport extends Transport {
     public void setMinRunwayLength(int minRunwayLength) {
         this.minRunwayLength = minRunwayLength;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", размах крыльев - " + getWingspan() + " м, минимальная длина взлётно-посадочной полосы для взлёта - " + getMinRunwayLength() + " м";
+    }
 }
 

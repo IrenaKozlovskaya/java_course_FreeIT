@@ -25,16 +25,12 @@ public class CivilTransport extends AirTransport {
         this.businessClass = businessClass;
     }
 
-    public String description() {
-        String result = getModel() + ": мощность - " + getPower() + " л/с (" + powerInKB() + " кВт), максимальная скорость - " + getMaxSpeed() + " км/ч, масса - " + getWeight() + " кг, размах крыльев - " + getWingspan() + " м, минимальная длина взлётно-посадочной полосы для взлёта - " + getMinRunwayLength() + " м, количество пассажиров - " + getPassenger() + ", наличие бизнес класса - " + isBusinessClass();
-        return result;
+    @Override
+    public String toString() {
+        return super.toString() + ", количество пассажиров - " + getPassenger() + ", наличие бизнес класса - " + isBusinessClass();
     }
 
-    public int powerInKB() {
-        return (int) (getPower() * 0.74);
-    }
-
-    public void capacity(int passenger) {
+    public void aircraft_capacity(int passenger) {
         if (getPassenger() >= passenger) {
             System.out.println(passenger + " пассажиров поместилось в самолёт");
         } else

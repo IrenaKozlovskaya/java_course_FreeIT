@@ -43,5 +43,13 @@ public abstract class Transport {
         this.model = model;
     }
 
+    public int powerInKB() {
+        return (int) (getPower() * 0.74);
+    }
+
+    public String toString() {
+        return getModel() + ": мощность - " + getPower() + " л/с (" + powerInKB() + " кВт), максимальная скорость - " + getMaxSpeed() + " км/ч, масса - " + getWeight() + " кг";
+    }
+
 }
 

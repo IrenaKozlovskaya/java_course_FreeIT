@@ -49,11 +49,6 @@ public class Robot implements IRobot {
         leg.step();
     }
 
-    /**
-     * Get the cost of a robot
-     *
-     * @return int
-     */
     @Override
     public int getPrice() {
         int price = head.getPrice() + hand.getPrice() + leg.getPrice();

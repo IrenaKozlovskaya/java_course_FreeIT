@@ -1,19 +1,19 @@
 public abstract class LandTransport extends Transport {
-    private int wheel;
+    private int numberOfWheels;
     private double fuelConsumption;
 
-    public LandTransport(int power, int maxSpeed, int weight, String model, int wheel, double fuelConsumption) {
+    public LandTransport(int power, int maxSpeed, int weight, String model, int numberOfWheels, double fuelConsumption) {
         super(power, maxSpeed, weight, model);
-        this.wheel = wheel;
+        this.numberOfWheels = numberOfWheels;
         this.fuelConsumption = fuelConsumption;
     }
 
-    public int getWheel() {
-        return wheel;
+    public int getNumberOfWheels() {
+        return numberOfWheels;
     }
 
-    public void setWheel(int wheel) {
-        this.wheel = wheel;
+    public void setNumberOfWheels(int numberOfWheels) {
+        this.numberOfWheels = numberOfWheels;
     }
 
     public double getFuelConsumption() {
@@ -26,6 +26,6 @@ public abstract class LandTransport extends Transport {
 
     @Override
     public String toString() {
-        return super.toString() + ", количество колес - " + getWheel() + ", расход топлива - " + getFuelConsumption() + " л/100км";
+        return super.toString() + ", количество колес - " + getNumberOfWheels() + ", расход топлива - " + getFuelConsumption() + " л/100км";
     }
 }

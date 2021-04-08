@@ -5,17 +5,17 @@ public class Program {
         CivilTransport civil = new CivilTransport(182018, 945, 166881, "Boeing 777-300ER", 64.8, 3300, 402, true);
         MilitaryTransport military = new MilitaryTransport(14801, 975, 9500, "Су-25 штурмовик", 14.36, 550, true, 6);
         System.out.println(passenger.toString());
-        passenger.distanceTraveled_withMaxSpeed(5.5);
+        passenger.calculateOfDistanceTraveledWithMaxSpeed(5.5);
         System.out.println();
         System.out.println(freight.toString());
-        freight.truck_capacity(22);
+        freight.checkTruckCapacity(22);
         System.out.println();
         System.out.println(civil.toString());
-        civil.aircraft_capacity(400);
+        civil.checkAircraftPassengerCapacity(400);
         System.out.println();
         System.out.println(military.toString());
-        military.rocket_launch(military.getRocket());
-        military.catapult_launch();
+        military.launch_rocket(military.getNumberOfRockets());
+        military.launch_catapult();
 
 
     }

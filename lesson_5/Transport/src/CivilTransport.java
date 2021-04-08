@@ -1,20 +1,20 @@
 public class CivilTransport extends AirTransport {
-    private int passenger;
+    private int maxNumberOfPassenger;
     private boolean businessClass;
 
-    public CivilTransport(int power, int maxSpeed, int weight, String model, double wingspan, int minRunwayLength, int passenger, boolean businessClass) {
+    public CivilTransport(int power, int maxSpeed, int weight, String model, double wingspan, int minRunwayLength, int maxNumberOfPassenger, boolean businessClass) {
         super(power, maxSpeed, weight, model, wingspan, minRunwayLength);
-        this.passenger = passenger;
+        this.maxNumberOfPassenger = maxNumberOfPassenger;
         this.businessClass = businessClass;
 
     }
 
-    public int getPassenger() {
-        return passenger;
+    public int getMaxNumberOfPassenger() {
+        return maxNumberOfPassenger;
     }
 
-    public void setPassenger(int passenger) {
-        this.passenger = passenger;
+    public void setMaxNumberOfPassenger(int maxNumberOfPassenger) {
+        this.maxNumberOfPassenger = maxNumberOfPassenger;
     }
 
     public boolean isBusinessClass() {
@@ -27,12 +27,12 @@ public class CivilTransport extends AirTransport {
 
     @Override
     public String toString() {
-        return super.toString() + ", количество пассажиров - " + getPassenger() + ", наличие бизнес класса - " + isBusinessClass();
+        return super.toString() + ", количество пассажиров - " + getMaxNumberOfPassenger() + ", наличие бизнес класса - " + isBusinessClass();
     }
 
-    public void aircraft_capacity(int passenger) {
-        if (getPassenger() >= passenger) {
-            System.out.println(passenger + " пассажиров поместилось в самолёт");
+    public void checkAircraftPassengerCapacity(int numberOfPassengers) {
+        if (getMaxNumberOfPassenger() >= numberOfPassengers) {
+            System.out.println(numberOfPassengers + " пассажиров поместилось в самолёт");
         } else
             System.out.println("Вам нужен самолёт побольше");
     }

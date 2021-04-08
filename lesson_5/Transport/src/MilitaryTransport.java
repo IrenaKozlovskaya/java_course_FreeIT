@@ -1,11 +1,11 @@
 public class MilitaryTransport extends AirTransport {
     private boolean catapult;
-    private int rocket;
+    private int numberOfRockets;
 
-    public MilitaryTransport(int power, int maxSpeed, int weight, String model, double wingspan, int minRunwayLength, boolean catapult, int rocket) {
+    public MilitaryTransport(int power, int maxSpeed, int weight, String model, double wingspan, int minRunwayLength, boolean catapult, int numberOfRockets) {
         super(power, maxSpeed, weight, model, wingspan, minRunwayLength);
         this.catapult = catapult;
-        this.rocket = rocket;
+        this.numberOfRockets = numberOfRockets;
     }
 
     public boolean isCatapult() {
@@ -16,30 +16,30 @@ public class MilitaryTransport extends AirTransport {
         this.catapult = catapult;
     }
 
-    public int getRocket() {
-        return rocket;
+    public int getNumberOfRockets() {
+        return numberOfRockets;
     }
 
-    public void setRocket(int rocket) {
-        this.rocket = rocket;
+    public void setNumberOfRockets(int numberOfRockets) {
+        this.numberOfRockets = numberOfRockets;
     }
 
     @Override
     public String toString() {
-        return super.toString() + ", наличие системы катапультирования - " + isCatapult() + ", количество ракет на борту - " + getRocket();
+        return super.toString() + ", наличие системы катапультирования - " + isCatapult() + ", количество ракет на борту - " + getNumberOfRockets();
     }
 
-    public void rocket_launch(int rocket) {
-        while (rocket >= 0) {
-            if (rocket == 0) {
+    public void launch_rocket(int numberOfRockets) {
+        while (numberOfRockets >= 0) {
+            if (numberOfRockets == 0) {
                 System.out.println("Боеприпасы отсутствуют");
             } else
                 System.out.println("Ракета пошла…");
-            rocket--;
+            numberOfRockets--;
         }
     }
 
-    public void catapult_launch() {
+    public void launch_catapult() {
         if (isCatapult()) {
             System.out.println("Катапультирование прошло успешно");
         } else

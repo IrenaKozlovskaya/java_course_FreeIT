@@ -1,8 +1,8 @@
 public class FreightTransport extends LandTransport {
     private int liftingCapacity;
 
-    public FreightTransport(int power, int maxSpeed, int weight, String model, int wheel, double fuelConsumption, int liftingCapacity) {
-        super(power, maxSpeed, weight, model, wheel, fuelConsumption);
+    public FreightTransport(int power, int maxSpeed, int weight, String model, int numberOfWheels, double fuelConsumption, int liftingCapacity) {
+        super(power, maxSpeed, weight, model, numberOfWheels, fuelConsumption);
         this.liftingCapacity = liftingCapacity;
     }
 
@@ -19,8 +19,8 @@ public class FreightTransport extends LandTransport {
         return super.toString() + ", грузоподъемность - " + getLiftingCapacity() + " т";
     }
 
-    public void truck_capacity(int cargo) {
-        if (liftingCapacity >= cargo) {
+    public void checkTruckCapacity(int cargoWeight) {
+        if (liftingCapacity >= cargoWeight) {
             System.out.println("Грузовик загружен");
         } else
             System.out.println("Вам нужен грузовик побольше");

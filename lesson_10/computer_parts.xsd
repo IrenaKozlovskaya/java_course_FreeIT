@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="devices">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="device" type="device"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="device">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" id="ID"/>
+            <xsd:element name="origin" type="xsd:string"/>
+            <xsd:element name="price" type="price"/>
+            <xsd:element name="type" type="type"/>
+            <xsd:element name="other" type="other"/>
+            <xsd:element name="critical" type="xsd:boolean"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="price">
+        <xsd:sequence>
+            <xsd:element ref="numericalValue"/>
+            <xsd:element name="currency" type="xsd:string" fixed="USD"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="type">
+        <xsd:sequence>
+            <xsd:element name="location" type="location"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="location">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="internal component"/>
+            <xsd:enumeration value="external component"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+    <xsd:complexType name="other">
+        <xsd:sequence>
+            <xsd:element name="isPeripheral" type="xsd:boolean"/>
+            <xsd:element name="power" type="power"/>
+            <xsd:element name="isCooler" type="xsd:boolean"/>
+            <xsd:element name="groupOfComponents" type="groupOfComponents"/>
+            <xsd:element name="ports" type="ports"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="power">
+        <xsd:sequence>
+            <xsd:element ref="numericalValue"/>
+            <xsd:element name="unit" type="xsd:string" fixed="W"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="groupOfComponents">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="input-output device"/>
+            <xsd:enumeration value="multimedia device"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="ports">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="COM"/>
+            <xsd:enumeration value="USB"/>
+            <xsd:enumeration value="LPT"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="numericalValue">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="10"/>
+                <xsd:fractionDigits value="2"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+</xsd:schema>

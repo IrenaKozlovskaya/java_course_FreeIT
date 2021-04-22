@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="computer_parts.xsd">
+    <device>
+        <name>Sven</name>
+        <origin>Russia</origin>
+        <price>
+            <numericalValue>22353.23</numericalValue>
+            <currency>USD</currency>
+        </price>
+        <type>
+            <location>internal component</location>
+        </type>
+        <other>
+            <isPeripheral>true</isPeripheral>
+            <power>
+                <numericalValue>1000.25</numericalValue>
+                <unit>W</unit>
+            </power>
+            <isCooler>true</isCooler>
+            <groupOfComponents>input-output device</groupOfComponents>
+            <ports>USB</ports>
+        </other>
+        <critical>false</critical>
+    </device>
+</devices>

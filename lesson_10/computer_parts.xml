@@ -3,10 +3,10 @@
 <devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="computer_parts.xsd">
     <device>
-        <name>Sven</name>
-        <origin>Russia</origin>
+        <name>Cooler Master MWE 700 Bronze</name>
+        <origin>China</origin>
         <price>
-            <numericalValue>22353.23</numericalValue>
+            <numericalValue>100.25</numericalValue>
             <currency>USD</currency>
         </price>
         <type>
@@ -15,13 +15,13 @@
         <other>
             <isPeripheral>true</isPeripheral>
             <power>
-                <numericalValue>1000.25</numericalValue>
+                <numericalValue>700.12</numericalValue>
                 <unit>W</unit>
             </power>
             <isCooler>true</isCooler>
             <groupOfComponents>input-output device</groupOfComponents>
             <ports>USB</ports>
         </other>
-        <critical>false</critical>
+        <critical>true</critical>
     </device>
 </devices>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="computer_parts.xsd">
+    <device>
+        <name>Cooler Master MWE 700 Bronze</name>
+        <origin>China</origin>
+        <price>
+            <numericalValue>100.25</numericalValue>
+            <currency>USD</currency>
+        </price>
+        <type>
+            <location>internal component</location>
+        </type>
+        <other>
+            <isPeripheral>true</isPeripheral>
+            <power>
+                <numericalValue>700.12</numericalValue>
+                <unit>W</unit>
+            </power>
+            <isCooler>true</isCooler>
+            <groupOfComponents>input-output device</groupOfComponents>
+            <ports>USB</ports>
+        </other>
+        <critical>true</critical>
+    </device>
+</devices>
